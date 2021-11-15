@@ -2,6 +2,7 @@ import React from 'react';
 import {Switch, Route, Link, useRouteMatch} from "react-router-dom";
 import useAuth from '../../Hooks/useAuth';
 import OrderList from './OrderList/OrderList';
+import Payment from './Payment/Payment';
 import ReviewList from './ReviewList/ReviewList';
 
 
@@ -26,6 +27,10 @@ const Dashboard = () => {
                             <div className="p-3 border bg-light">
                                 <Link to={`${url}/reviewList`} className="text-decoration-none fw-bold"><i class="fas fa-pen"></i> Review List</Link>
                             </div>
+
+                            <div className="p-3 border bg-light">
+                                <Link to={`${url}/payment`} className="text-decoration-none fw-bold"><i class="fab fa-paypal"></i> Payment</Link>
+                            </div>
                         </div>
                         <div className="col-9">
                             <Switch>
@@ -38,6 +43,10 @@ const Dashboard = () => {
 
                                 <Route path={`${path}/reviewList`}>
                                     <ReviewList></ReviewList>
+                                </Route>
+
+                                <Route path={`${path}/payment`}>
+                                    <Payment></Payment>
                                 </Route>
                             </Switch>
                         </div>

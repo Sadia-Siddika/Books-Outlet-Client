@@ -6,7 +6,7 @@ const ReviewList = () => {
     const [reviews, setReview] = useState([]);
 
     useEffect(() => {
-        const url = `https://hidden-basin-07858.herokuapp.com/review?email=${user.email}`
+        const url = `https://hidden-basin-07858.herokuapp.com/user/review?userEmail=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setReview(data));

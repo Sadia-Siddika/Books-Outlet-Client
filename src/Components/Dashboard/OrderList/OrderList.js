@@ -8,7 +8,7 @@ const OrderList = () => {
     const [items, setItem] = useState([]);
 
     useEffect(() => {
-        const url = `https://hidden-basin-07858.herokuapp.com/order?email=${user.email}`
+        const url = `https://hidden-basin-07858.herokuapp.com/user/order?userEmail=${user.email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data));
